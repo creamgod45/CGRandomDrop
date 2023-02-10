@@ -1,0 +1,7 @@
+name: CGRandomDrop
+version: '1'
+main: cg.creamgod45.CGRandomDrop
+api-version: 1.19
+load: STARTUP
+authors: [ CreamGod45 ]
+description: 隨機掉落物品
