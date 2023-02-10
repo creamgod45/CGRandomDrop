@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntityDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -40,7 +41,16 @@ public class Event implements Listener {
         Entity entity = e.getEntity();
         Location location = entity.getLocation();
         World world = entity.getWorld();
+        randitem(location, world);
         e.setCancelled(true);
+    }
+
+    @EventHandler
+    public void EntityDeathEvent(EntityDeathEvent e) {
+        e.getDrops().clear();
+        Entity entity = e.getEntity();
+        Location location = entity.getLocation();
+        World world = entity.getWorld();
         randitem(location, world);
     }
 
